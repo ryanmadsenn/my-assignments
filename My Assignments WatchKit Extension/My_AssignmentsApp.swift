@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let apiCaller = APICaller()
+
 @main
 struct My_AssignmentsApp: App {
     @SceneBuilder var body: some Scene {

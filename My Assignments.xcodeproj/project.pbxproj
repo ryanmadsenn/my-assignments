@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1640F22291D9B85008B65EE /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1640F21291D9B85008B65EE /* TestClass.swift */; };
+		A1640F24291DFCAE008B65EE /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1640F23291DFCAE008B65EE /* APICaller.swift */; };
 		A1881B5928D92AE2009E5C28 /* My_AssignmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */; };
 		A1881B5B28D92AE2009E5C28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881B5A28D92AE2009E5C28 /* ContentView.swift */; };
 		A1881B5D28D92AE3009E5C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1881B5C28D92AE3009E5C28 /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 		A1881BA328D92AE4009E5C28 /* My_Assignments_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881BA228D92AE4009E5C28 /* My_Assignments_WatchKit_AppTests.swift */; };
 		A1881BAD28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881BAC28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITests.swift */; };
 		A1881BAF28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881BAE28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITestsLaunchTests.swift */; };
+		A18953562919B5DA00F9A9F9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18953552919B5DA00F9A9F9 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A1640F21291D9B85008B65EE /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		A1640F23291DFCAE008B65EE /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		A1881B5528D92AE2009E5C28 /* My Assignments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Assignments.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_AssignmentsApp.swift; sourceTree = "<group>"; };
 		A1881B5A28D92AE2009E5C28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 		A1881BA828D92AE4009E5C28 /* My Assignments WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Assignments WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1881BAC28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Assignments_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		A1881BAE28D92AE4009E5C28 /* My_Assignments_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Assignments_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A18953552919B5DA00F9A9F9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,8 @@
 			children = (
 				A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */,
 				A1881B5A28D92AE2009E5C28 /* ContentView.swift */,
+				A1640F21291D9B85008B65EE /* TestClass.swift */,
+				A18953552919B5DA00F9A9F9 /* APICaller.swift */,
 				A1881B5C28D92AE3009E5C28 /* Assets.xcassets */,
 				A1881B5E28D92AE3009E5C28 /* Preview Content */,
 			);
@@ -250,6 +258,7 @@
 		A1881B8828D92AE3009E5C28 /* My Assignments WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A1640F23291DFCAE008B65EE /* APICaller.swift */,
 				A1881B8928D92AE3009E5C28 /* My_AssignmentsApp.swift */,
 				A1881B8B28D92AE3009E5C28 /* ContentView.swift */,
 				A1881B8D28D92AE3009E5C28 /* NotificationController.swift */,
@@ -539,7 +548,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1640F22291D9B85008B65EE /* TestClass.swift in Sources */,
 				A1881B5B28D92AE2009E5C28 /* ContentView.swift in Sources */,
+				A18953562919B5DA00F9A9F9 /* APICaller.swift in Sources */,
 				A1881B5928D92AE2009E5C28 /* My_AssignmentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1881B8E28D92AE3009E5C28 /* NotificationController.swift in Sources */,
+				A1640F24291DFCAE008B65EE /* APICaller.swift in Sources */,
 				A1881B8C28D92AE3009E5C28 /* ContentView.swift in Sources */,
 				A1881B9228D92AE3009E5C28 /* ComplicationController.swift in Sources */,
 				A1881B8A28D92AE3009E5C28 /* My_AssignmentsApp.swift in Sources */,
