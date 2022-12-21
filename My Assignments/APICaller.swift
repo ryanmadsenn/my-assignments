@@ -24,8 +24,6 @@ class APICaller {
         guard let url = URL(string: strURL) else{
             return
         }
-        
-        let APIkey = "Bearer 10706~eETfaVM6GyPNBUmx8CPHmdz1d8D8gVYfoKT7cNf3dv6NVeznzeKhX4t0DhmxXVnP"
 
         var request = URLRequest(url: url)
         request.setValue(APIkey, forHTTPHeaderField: "Authorization")
