@@ -4,7 +4,6 @@
 //
 //  Created by Ryan Madsen on 9/19/22.
 //
-
 import SwiftUI
 
 let apiCaller = APICaller()

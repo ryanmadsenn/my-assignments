@@ -1,154 +1,214 @@
 import Foundation
-import UIKit
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 class APICaller {
+    let enrollementsURL = "https://canvas.instructure.com/api/v1/users/self/enrollments"
+    let baseURL = "https://canvas.instructure.com/api/v1/courses"
+    let pageSuffix = "?page=1&per_page=100"
+    let key = ProcessInfo.processInfo.environment["API_KEY"]
 
-    struct Enrollment: Codable {
-        let course_id: Int;
-    }
-
-    struct Course: Codable {
-        let name: String;
-    }
-
-    struct Assignment: Codable {
-        let name: String;
-    }
-
-    var courseIDs = [Int]()
-    var courseNames: [Int: String] = [:]
-    var courseAssignments: [Int: [String]] = [:]
-    var assignmentsArr = [String]()
-
-    func getEnrollments(strURL: String, _ completion: @escaping () -> ()) {
-        guard let url = URL(string: strURL) else{
-            return
-        }
-        
-        let APIkey = "Bearer 10706~eETfaVM6GyPNBUmx8CPHmdz1d8D8gVYfoKT7cNf3dv6NVeznzeKhX4t0DhmxXVnP"
-
-        var request = URLRequest(url: url)
-        request.setValue(APIkey, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
-
-            if let data = data {
-                var decoded: [Enrollment]?;
-                typealias allObjects = [Enrollment]?;
-                do {
-                    decoded = try JSONDecoder().decode(allObjects.self, from: data)
-                } catch let error {
-                    print(error)
-                }
-                    
-                guard let json = decoded else {
+    func getCourseIDs(delay: Double, retries: Int, _ completion: @escaping ([CourseID]) -> ()) {
+        let timer = Timer(timeInterval: delay, repeats: false) { timer in
+            guard let url = URL(string: self.enrollementsURL + self.pageSuffix) else {
+                print("Invalid URL")
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.setValue(self.key, forHTTPHeaderField: "Authorization")
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let response = response as? HTTPURLResponse else {
+                    print("Invalid response")
                     return
                 }
                 
-                for obj in json {
-                    self.courseIDs.append(obj.course_id)
+                // If response is ok.
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        print("Invalid data")
+                        return
+                    }
+                    
+                    var decoded: [CourseID]?;
+                    typealias allObjects = [CourseID]?;
+                    
+                    do {
+                        decoded = try JSONDecoder().decode(allObjects.self, from: data)
+                    } catch let error {
+                        print()
+                        print("❗️ Error decoding")
+                        print("❗️ \(error)")
+                        print("❗️ Error URL: \(url)")
+                        print()
+                    }
+                    
+                    guard let unwrapped = decoded else {
+                        print()
+                        print("❗️ Error unwrapping")
+                        print("❗️ Error URL: \(url)")
+                        print()
+                        return
+                    }
+                    
+                    completion(unwrapped)
+                    
+                // If response is rate-limited.
+                } else if response.statusCode == 403 {
+                    self.getCourseIDs(delay: delay + 0.5, retries: retries + 1, { unwrapped in
+                        completion(unwrapped)
+                    })
                 }
-                
-                completion()
             }
+            task.resume()
         }
-        task.resume()
+        RunLoop.main.add(timer, forMode: .common)
     }
-
-
-    func getCourseName(strURL: String, ids: [Int], _ completion: @escaping () -> ()) {
-        let group = DispatchGroup()
-        for id in ids {
-            guard let url = URL(string: strURL + String(id)) else{
+    
+    func getCourse(courseID: Int, delay: Double, retries: Int, _ completion: @escaping (Course) -> ()) {
+        let timer = Timer(timeInterval: delay, repeats: false) { timer in
+            guard let url = URL(string: "\(self.baseURL)/\(courseID)") else {
+                print("Invalid URL")
                 return
             }
             
-            let APIkey = "Bearer 10706~eETfaVM6GyPNBUmx8CPHmdz1d8D8gVYfoKT7cNf3dv6NVeznzeKhX4t0DhmxXVnP"
-
             var request = URLRequest(url: url)
-            request.setValue(APIkey, forHTTPHeaderField: "Authorization")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(self.key, forHTTPHeaderField: "Authorization")
             
-            group.enter()
-            
-            let task = URLSession.shared.dataTask(with: request) {
-                data, response, error in
-
-                if let data = data {
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let response = response as? HTTPURLResponse else {
+                    print("Invalid response")
+                    return
+                }
+                
+                // If response is ok.
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        print("Invalid data")
+                        return
+                    }
+                    
                     var decoded: Course?;
                     typealias allObjects = Course?;
+                    
                     do {
                         decoded = try JSONDecoder().decode(allObjects.self, from: data)
                     } catch let error {
-                        print(error)
+                        print()
+                        print("❗️ Error decoding")
+                        print("❗️ \(error)")
+                        print("❗️ Error URL: \(url)")
+                        print()
                     }
-                        
-                    guard let json = decoded else {
+                    
+                    guard let unwrapped = decoded else {
+                        print()
+                        print("❗️ Error unwrapping")
+                        print("❗️ Error URL: \(url)")
+                        print()
                         return
                     }
-                
-                    self.courseNames[id] = json.name
+                    
+                    completion(unwrapped)
+                    
+                // If response is rate-limited.
+                } else if response.statusCode == 403 {
+                    self.getCourse(courseID: courseID, delay: delay + 0.5, retries: retries + 1, {course in
+                        completion(course)
+                    })
                 }
-                group.leave()
             }
             task.resume()
+        }
+        RunLoop.main.add(timer, forMode: .common)
+    }
+
+
+    func getAllCourseAssignments(courseLoad: CourseLoad, _ completion: @escaping () -> ()) {
+        let group = DispatchGroup()
+        
+        for i in 0...courseLoad.courses.count - 1 {
+            if courseLoad.courses[i].name != nil {
+                group.enter()
+                getCourseAssignments(courseID: courseLoad.courses[i].id, delay: 0.0, retries: 0, { assignmentArr in
+                    DispatchQueue.main.async {
+                        courseLoad.courses[i].assignments = assignmentArr
+                        group.leave()
+                    }
+                })
+            } else {
+                DispatchQueue.main.async {
+                    courseLoad.courses[i].assignments = []
+                }
+            }
         }
         group.notify(queue: .main, execute: {completion()})
     }
 
 
-
-    func getAssignments(strURL: String, ids: [Int], _ completion: @escaping () -> ()) {
-        let group = DispatchGroup()
-        for id in ids {
-            guard let url = URL(string: strURL + String(id) + "/assignments") else{
+    func getCourseAssignments(courseID: Int, delay: Double, retries: Int, _ completion: @escaping ([Assignment]) -> ()) {
+        let timer = Timer(timeInterval: delay, repeats: false) { timer in
+            guard let url = URL(string: "\(self.baseURL)/\(courseID)/assignments\(self.pageSuffix)") else {
+                print("Invalid URL")
                 return
             }
             
-            let APIkey = "Bearer 10706~eETfaVM6GyPNBUmx8CPHmdz1d8D8gVYfoKT7cNf3dv6NVeznzeKhX4t0DhmxXVnP"
-
             var request = URLRequest(url: url)
-            request.setValue(APIkey, forHTTPHeaderField: "Authorization")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(self.key, forHTTPHeaderField: "Authorization")
             
-            group.enter()
-            let task = URLSession.shared.dataTask(with: request) {
-                data, response, error in
-
-                if let data = data {
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let response = response as? HTTPURLResponse else {
+                    print("Invalid response")
+                    return
+                }
+                
+                // If response is ok.
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        print("Invalid data")
+                        return
+                    }
+                    
                     var decoded: [Assignment]?;
                     typealias allObjects = [Assignment]?;
+                    
                     do {
                         decoded = try JSONDecoder().decode(allObjects.self, from: data)
                     } catch let error {
-                        print(error)
+                        print()
+                        print("❗️ Error decoding")
+                        print("❗️ \(error)")
+                        print("❗️ Error URL: \(url)")
+                        print()
                     }
-                        
-                    guard let json = decoded else {
+                    
+                    guard let unwrapped = decoded else {
                         return
                     }
-        //            for obj in json {
-        //                print(obj.name)
-        //            }
-                    var assignments = [String]()
                     
-                    for obj in json {
-                        assignments.append(obj.name)
+                    completion(unwrapped)
+                    
+                // If response is rate-limited.
+                } else if response.statusCode == 403 {
+                    if retries < 4 {
+                        self.getCourseAssignments(courseID: courseID, delay: delay + 0.5, retries: retries + 1, { assignmentArr in
+                            completion(assignmentArr)
+                        })
+                    } else {
+                        print("❗️Error: Unable to fetch data")
+                        print("❗️Error URL: \(url)")
+                        completion([])
                     }
-                    self.assignmentsArr.append(contentsOf: assignments)
-                    self.courseAssignments[id] = assignments
+                } else if let error = error {
+                    print("❗️Error:")
+                    print("❗️ \(error)")
+                    completion([])
                 }
-                group.leave()
             }
             task.resume()
         }
-        group.notify(queue: .main, execute: {completion()})
-    }
-
-    
-    func callAPI() {
-        print(1)
+        RunLoop.main.add(timer, forMode: .common)
     }
 }

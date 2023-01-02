@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1640F22291D9B85008B65EE /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1640F21291D9B85008B65EE /* TestClass.swift */; };
+		A12800142962C7350030A358 /* CourseID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12800132962C7350030A358 /* CourseID.swift */; };
+		A12800162962CF490030A358 /* CourseLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12800152962CF490030A358 /* CourseLoad.swift */; };
+		A12800182962CF560030A358 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12800172962CF560030A358 /* Course.swift */; };
+		A128001A2962CF630030A358 /* CourseID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12800192962CF630030A358 /* CourseID.swift */; };
+		A12800202962CFD00030A358 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128001F2962CFD00030A358 /* Assignment.swift */; };
+		A12800222962CFEC0030A358 /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12800212962CFEC0030A358 /* ViewData.swift */; };
+		A13A140D295BD19200B86CBF /* CourseLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A140C295BD19200B86CBF /* CourseLoad.swift */; };
+		A13A140F295BD20E00B86CBF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A140E295BD20E00B86CBF /* Course.swift */; };
+		A13A1411295BD47D00B86CBF /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A1410295BD47D00B86CBF /* Assignment.swift */; };
+		A13A1413295E5FDC00B86CBF /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A1412295E5FDC00B86CBF /* ViewData.swift */; };
 		A1640F24291DFCAE008B65EE /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1640F23291DFCAE008B65EE /* APICaller.swift */; };
 		A1881B5928D92AE2009E5C28 /* My_AssignmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */; };
 		A1881B5B28D92AE2009E5C28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1881B5A28D92AE2009E5C28 /* ContentView.swift */; };
@@ -103,7 +112,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1640F21291D9B85008B65EE /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		A12800132962C7350030A358 /* CourseID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseID.swift; sourceTree = "<group>"; };
+		A12800152962CF490030A358 /* CourseLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoad.swift; sourceTree = "<group>"; };
+		A12800172962CF560030A358 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		A12800192962CF630030A358 /* CourseID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseID.swift; sourceTree = "<group>"; };
+		A128001F2962CFD00030A358 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		A12800212962CFEC0030A358 /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
+		A13A140C295BD19200B86CBF /* CourseLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoad.swift; sourceTree = "<group>"; };
+		A13A140E295BD20E00B86CBF /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		A13A1410295BD47D00B86CBF /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		A13A1412295E5FDC00B86CBF /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
 		A1640F23291DFCAE008B65EE /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		A1881B5528D92AE2009E5C28 /* My Assignments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Assignments.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_AssignmentsApp.swift; sourceTree = "<group>"; };
@@ -214,7 +232,11 @@
 			children = (
 				A1881B5828D92AE2009E5C28 /* My_AssignmentsApp.swift */,
 				A1881B5A28D92AE2009E5C28 /* ContentView.swift */,
-				A1640F21291D9B85008B65EE /* TestClass.swift */,
+				A13A140C295BD19200B86CBF /* CourseLoad.swift */,
+				A12800132962C7350030A358 /* CourseID.swift */,
+				A13A140E295BD20E00B86CBF /* Course.swift */,
+				A13A1412295E5FDC00B86CBF /* ViewData.swift */,
+				A13A1410295BD47D00B86CBF /* Assignment.swift */,
 				A18953552919B5DA00F9A9F9 /* APICaller.swift */,
 				A1881B5C28D92AE3009E5C28 /* Assets.xcassets */,
 				A1881B5E28D92AE3009E5C28 /* Preview Content */,
@@ -259,6 +281,11 @@
 			isa = PBXGroup;
 			children = (
 				A1640F23291DFCAE008B65EE /* APICaller.swift */,
+				A12800152962CF490030A358 /* CourseLoad.swift */,
+				A12800172962CF560030A358 /* Course.swift */,
+				A128001F2962CFD00030A358 /* Assignment.swift */,
+				A12800192962CF630030A358 /* CourseID.swift */,
+				A12800212962CFEC0030A358 /* ViewData.swift */,
 				A1881B8928D92AE3009E5C28 /* My_AssignmentsApp.swift */,
 				A1881B8B28D92AE3009E5C28 /* ContentView.swift */,
 				A1881B8D28D92AE3009E5C28 /* NotificationController.swift */,
@@ -548,10 +575,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1640F22291D9B85008B65EE /* TestClass.swift in Sources */,
+				A13A1413295E5FDC00B86CBF /* ViewData.swift in Sources */,
+				A13A1411295BD47D00B86CBF /* Assignment.swift in Sources */,
+				A13A140D295BD19200B86CBF /* CourseLoad.swift in Sources */,
 				A1881B5B28D92AE2009E5C28 /* ContentView.swift in Sources */,
+				A13A140F295BD20E00B86CBF /* Course.swift in Sources */,
 				A18953562919B5DA00F9A9F9 /* APICaller.swift in Sources */,
 				A1881B5928D92AE2009E5C28 /* My_AssignmentsApp.swift in Sources */,
+				A12800142962C7350030A358 /* CourseID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,11 +607,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12800182962CF560030A358 /* Course.swift in Sources */,
 				A1881B8E28D92AE3009E5C28 /* NotificationController.swift in Sources */,
 				A1640F24291DFCAE008B65EE /* APICaller.swift in Sources */,
+				A12800202962CFD00030A358 /* Assignment.swift in Sources */,
 				A1881B8C28D92AE3009E5C28 /* ContentView.swift in Sources */,
 				A1881B9228D92AE3009E5C28 /* ComplicationController.swift in Sources */,
 				A1881B8A28D92AE3009E5C28 /* My_AssignmentsApp.swift in Sources */,
+				A128001A2962CF630030A358 /* CourseID.swift in Sources */,
+				A12800162962CF490030A358 /* CourseLoad.swift in Sources */,
+				A12800222962CFEC0030A358 /* ViewData.swift in Sources */,
 				A1881B9028D92AE3009E5C28 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +792,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Assignments WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My Assignments WatchKit Extension/Info.plist";
@@ -787,6 +824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Assignments WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My Assignments WatchKit Extension/Info.plist";
@@ -820,6 +858,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = My_Assignments_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Assignments WatchKit App";
@@ -845,6 +884,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = My_Assignments_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Assignments WatchKit App";
@@ -871,6 +911,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Assignments/Preview Content\"";
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -901,6 +942,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Assignments/Preview Content\"";
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -931,6 +973,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -951,6 +994,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -971,6 +1015,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -990,6 +1035,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1011,6 +1057,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "M1A.My-Assignments-WatchKit-AppTests";
@@ -1031,6 +1078,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "M1A.My-Assignments-WatchKit-AppTests";
@@ -1050,6 +1098,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "M1A.My-Assignments-WatchKit-AppUITests";
@@ -1068,6 +1117,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GP98J7TTL6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "M1A.My-Assignments-WatchKit-AppUITests";
