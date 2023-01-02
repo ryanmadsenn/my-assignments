@@ -6,7 +6,8 @@ The myAssignments app is an app for iPhone and Apple Watch that uses the Canvas 
 
 I wanted to write this software so that I can easily see what my school workload looks like without having to go on my computer.
 
-[Demo Video](https://youtu.be/dAJyiCvCebc)
+[Demo Video 1](https://youtu.be/dAJyiCvCebc)  
+[Demo Video 2](https://youtu.be/ZUabN2n3pX8)
 
 # Development Environment
 
@@ -16,6 +17,7 @@ I wanted to write this software so that I can easily see what my school workload
 # Language
 
 * Swift
+* SwiftUI
 
 # Useful Websites
 
@@ -24,6 +26,6 @@ I wanted to write this software so that I can easily see what my school workload
 
 # Future Work
 
-* Organize API response to isolate assignments
-* Put assignments into content view
+* Organize assignments by due date
+* Add push notifications when an assignment is due
 * Implement OATH2 so that anyone can use the app
