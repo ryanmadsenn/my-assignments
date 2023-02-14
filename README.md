@@ -7,8 +7,8 @@ The myAssignments app is an app for iPhone and Apple Watch that uses the Canvas 
 I wanted to write this software so that I can easily see what my school workload looks like without having to go on my computer and manually search through my courses for my assingments.
 
 [Demo Video 1](https://youtu.be/dAJyiCvCebc)  
-[Demo Video 2](https://youtu.be/ZUabN2n3pX8)
-[Demo Video 3] (https://youtu.be/H_V5WmcqDuA)
+[Demo Video 2](https://youtu.be/ZUabN2n3pX8)  
+[Demo Video 3](https://youtu.be/H_V5WmcqDuA)
 
 # Development Environment
 
