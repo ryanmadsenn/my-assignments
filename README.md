@@ -8,7 +8,7 @@ I wanted to write this software so that I can easily see what my school workload
 
 [Demo Video 1](https://youtu.be/dAJyiCvCebc)  
 [Demo Video 2](https://youtu.be/ZUabN2n3pX8)  
-[Demo Video 3](https://youtu.be/H_V5WmcqDuA)
+[Demo Video 3](https://youtu.be/lPhZ3NK3a_o)
 
 # Development Environment
 
